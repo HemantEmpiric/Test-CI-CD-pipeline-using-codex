@@ -546,7 +546,28 @@
     "owner_notifications": []
   },
   "actions": {
-    "github_issues_created": [],
+    "github_issues_created": [
+      {
+        "cluster_id": "LQA-001",
+        "issue_number": 1,
+        "url": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex/issues/1"
+      },
+      {
+        "cluster_id": "LQA-002",
+        "issue_number": 2,
+        "url": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex/issues/2"
+      },
+      {
+        "cluster_id": "LQA-003",
+        "issue_number": 3,
+        "url": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex/issues/3"
+      },
+      {
+        "cluster_id": "LQA-004",
+        "issue_number": 4,
+        "url": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex/issues/4"
+      }
+    ],
     "slack_messages_sent": []
   },
   "errors": [
@@ -554,25 +575,6 @@
       "code": "experiment_registry_unavailable",
       "message": "Registry.get_experiments() could not be retrieved from the supplied environment",
       "detail": "ModuleNotFoundError: No module named 'registry'"
-    },
-    {
-      "code": "github_issue_creation_forbidden",
-      "message": "GitHub connector was installed and repository access was confirmed, but creating issues failed with 403 Resource not accessible by integration. The GitHub app likely needs Issues write permission for this repository.",
-      "target_repository": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex.git",
-      "finding_categories": [
-        "LQA-001",
-        "LQA-002",
-        "LQA-003",
-        "LQA-004"
-      ],
-      "github_api_status": "403"
-    },
-    {
-      "code": "github_json_upload_forbidden",
-      "message": "GitHub connector was installed and repository access was confirmed, but adding outputs/ci_cd_pipeline_audit.json failed with 403 Resource not accessible by integration. The GitHub app likely needs Contents write permission for this repository.",
-      "target_repository": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex.git",
-      "target_path": "outputs/ci_cd_pipeline_audit.json",
-      "github_api_status": "403"
     }
   ]
 }

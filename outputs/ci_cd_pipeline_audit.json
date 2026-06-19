@@ -1,0 +1,578 @@
+{
+  "eval_regression_sweep": {
+    "regressions": [],
+    "noise": [
+      {
+        "metric_name": "success_rate",
+        "latest_value": "derived_missing",
+        "baseline_value": "derived_missing",
+        "delta": "derived_missing",
+        "z_score": "derived_missing",
+        "regression_status": "derived_missing",
+        "reason": "dataset contains failure-log rows only and has no final pipeline status or successful-run denominator"
+      },
+      {
+        "metric_name": "failure_rate",
+        "latest_value": "derived_missing",
+        "baseline_value": "derived_missing",
+        "delta": "derived_missing",
+        "z_score": "derived_missing",
+        "regression_status": "derived_missing",
+        "reason": "dataset contains failure-log rows only and has no total-run denominator"
+      },
+      {
+        "metric_name": "failure_log_count_7d",
+        "latest_value": 1805.0,
+        "baseline_value": 1746.083333,
+        "delta": 58.916667,
+        "relative_delta": 0.033742,
+        "z_score": 1.28767,
+        "regression_status": "noise",
+        "validation_rule": "worsening direction=increase, abs(z)>=2.0, relative deterioration>=0.05"
+      },
+      {
+        "metric_name": "execution_time_mean_sec",
+        "latest_value": 3939.883657,
+        "baseline_value": 3926.848112,
+        "delta": 13.035544,
+        "relative_delta": 0.00332,
+        "z_score": 0.427637,
+        "regression_status": "noise",
+        "validation_rule": "worsening direction=increase, abs(z)>=2.0, relative deterioration>=0.05"
+      },
+      {
+        "metric_name": "deployment_failure_type_rate",
+        "latest_value": 0.104155,
+        "baseline_value": 0.099764,
+        "delta": 0.004391,
+        "relative_delta": 0.044012,
+        "z_score": 0.640687,
+        "regression_status": "noise",
+        "validation_rule": "worsening direction=increase, abs(z)>=2.0, relative deterioration>=0.05"
+      },
+      {
+        "metric_name": "deploy_stage_error_rate",
+        "latest_value": 0.321884,
+        "baseline_value": 0.334181,
+        "delta": -0.012298,
+        "relative_delta": -0.0368,
+        "z_score": -1.779566,
+        "regression_status": "noise",
+        "validation_rule": "worsening direction=increase, abs(z)>=2.0, relative deterioration>=0.05"
+      },
+      {
+        "metric_name": "build_stage_error_rate",
+        "latest_value": 0.333518,
+        "baseline_value": 0.331422,
+        "delta": 0.002096,
+        "relative_delta": 0.006325,
+        "z_score": 0.181781,
+        "regression_status": "noise",
+        "validation_rule": "worsening direction=increase, abs(z)>=2.0, relative deterioration>=0.05"
+      },
+      {
+        "metric_name": "test_stage_error_rate",
+        "latest_value": 0.344598,
+        "baseline_value": 0.334397,
+        "delta": 0.010202,
+        "relative_delta": 0.030508,
+        "z_score": 0.8008,
+        "regression_status": "noise",
+        "validation_rule": "worsening direction=increase, abs(z)>=2.0, relative deterioration>=0.05"
+      }
+    ],
+    "summary": {
+      "dataset_ref": "mirzayasirabdullah07/cicd-pipeline-failure-logs-dataset-for-aiops",
+      "dataset_url": "https://www.kaggle.com/datasets/mirzayasirabdullah07/cicd-pipeline-failure-logs-dataset-for-aiops",
+      "row_count": 45000,
+      "source_file": "work/ci_cd_pipeline_analysis/unzipped/ci_cd_pipeline_failure_logs_dataset.csv",
+      "time_range": {
+        "min_timestamp": "2025-08-14T07:24:16.927259",
+        "max_timestamp": "2026-02-10T07:12:16.927259"
+      },
+      "latest_window": {
+        "start_exclusive": "2026-02-03T07:12:16.927259",
+        "end_inclusive": "2026-02-10T07:12:16.927259",
+        "row_count": 1805
+      },
+      "baseline": {
+        "source": "derived from complete historical 7-day windows in the downloaded CSV",
+        "complete_7d_window_count": 24
+      },
+      "confirmed_regression_count": 0,
+      "slack_alerts_eligible": 0,
+      "regression_validation_thresholds": {
+        "minimum_abs_z_score": 2.0,
+        "minimum_relative_deterioration": 0.05
+      },
+      "important_limitations": [
+        "The CSV is a failure-log extract, not a full pipeline run ledger.",
+        "True success rate and true pipeline failure rate are derived_missing without successful-run and total-run records."
+      ]
+    }
+  },
+  "labeling_qa": {
+    "inconsistent_rows": [
+      {
+        "cluster_id": "LQA-001",
+        "pipeline_id": "pipe_7704",
+        "run_id": "run_2",
+        "timestamp": "2026-01-02T05:36:16.927259",
+        "failure_stage": "deploy",
+        "failure_type": "Build Failure",
+        "error_code": "ERR_929",
+        "severity": "HIGH",
+        "rollback_triggered": true,
+        "incident_created": true
+      },
+      {
+        "cluster_id": "LQA-001",
+        "pipeline_id": "pipe_9062",
+        "run_id": "run_11",
+        "timestamp": "2025-10-18T09:24:16.927259",
+        "failure_stage": "build",
+        "failure_type": "Test Failure",
+        "error_code": "ERR_848",
+        "severity": "MEDIUM",
+        "rollback_triggered": true,
+        "incident_created": true
+      },
+      {
+        "cluster_id": "LQA-001",
+        "pipeline_id": "pipe_3480",
+        "run_id": "run_12",
+        "timestamp": "2025-09-27T02:10:16.927259",
+        "failure_stage": "deploy",
+        "failure_type": "Test Failure",
+        "error_code": "ERR_202",
+        "severity": "CRITICAL",
+        "rollback_triggered": true,
+        "incident_created": true
+      },
+      {
+        "cluster_id": "LQA-002",
+        "pipeline_id": "pipe_3630",
+        "run_id": "run_916",
+        "timestamp": "2025-08-24T16:01:16.927259",
+        "failure_stage": "deploy",
+        "failure_type": "Resource Exhaustion",
+        "error_code": "ERR_778",
+        "severity": "HIGH",
+        "rollback_triggered": true,
+        "incident_created": true,
+        "error_code_row_count": 76,
+        "distinct_failure_types_for_code": 10,
+        "distinct_failure_stages_for_code": 3
+      },
+      {
+        "cluster_id": "LQA-002",
+        "pipeline_id": "pipe_5683",
+        "run_id": "run_320",
+        "timestamp": "2026-01-09T09:22:16.927259",
+        "failure_stage": "build",
+        "failure_type": "Build Failure",
+        "error_code": "ERR_518",
+        "severity": "MEDIUM",
+        "rollback_triggered": true,
+        "incident_created": false,
+        "error_code_row_count": 72,
+        "distinct_failure_types_for_code": 10,
+        "distinct_failure_stages_for_code": 3
+      },
+      {
+        "cluster_id": "LQA-003",
+        "pipeline_id": "pipe_2032",
+        "run_id": "run_0",
+        "timestamp": "2025-12-29T07:58:16.927259",
+        "failure_stage": "deploy",
+        "failure_type": "Security Scan Failure",
+        "error_code": "ERR_621",
+        "severity": "MEDIUM",
+        "rollback_triggered": true,
+        "incident_created": true,
+        "error_message_sample": "ERROR: RjyJqtFYmKiXBA5qwUE5HeQgJ2AOHlTqsFEGfE3Z 2eykZAqkscUJ4KUxihlYXskJiDSG3TF0CXhFXZp9TfdtWDQWvfeJjXS1wiOikTyhDKEPIUsTbXRLcN9"
+      },
+      {
+        "cluster_id": "LQA-003",
+        "pipeline_id": "pipe_8152",
+        "run_id": "run_1",
+        "timestamp": "2025-11-23T05:49:16.927259",
+        "failure_stage": "build",
+        "failure_type": "Build Failure",
+        "error_code": "ERR_136",
+        "severity": "CRITICAL",
+        "rollback_triggered": true,
+        "incident_created": true,
+        "error_message_sample": "ERROR: 5r2039obpbhM8gNiE2GPONpWhYnkQBqFoM0IhXlPIqSkoJEnFqibMcbW8yEetJWD3tKbM4RvNixxpustB2d6p2HvFYhQ9fN NCEulckyA8KQ1RwZrpJZS30f"
+      },
+      {
+        "cluster_id": "LQA-004",
+        "pipeline_id": "pipe_8152",
+        "run_id": "run_1",
+        "timestamp": "2025-11-23T05:49:16.927259",
+        "failure_stage": "build",
+        "failure_type": "Build Failure",
+        "error_code": "ERR_136",
+        "severity": "CRITICAL",
+        "rollback_triggered": true,
+        "incident_created": true
+      },
+      {
+        "cluster_id": "LQA-004",
+        "pipeline_id": "pipe_9385",
+        "run_id": "run_3",
+        "timestamp": "2025-12-02T02:12:16.927259",
+        "failure_stage": "test",
+        "failure_type": "Resource Exhaustion",
+        "error_code": "ERR_699",
+        "severity": "HIGH",
+        "rollback_triggered": true,
+        "incident_created": true
+      }
+    ],
+    "clusters": [
+      {
+        "cluster_id": "LQA-001",
+        "category": "stage_failure_type_mismatch",
+        "severity": "HIGH",
+        "affected_rows": 8935,
+        "representative_examples": [
+          {
+            "pipeline_id": "pipe_7704",
+            "run_id": "run_2",
+            "timestamp": "2026-01-02T05:36:16.927259",
+            "failure_stage": "deploy",
+            "failure_type": "Build Failure",
+            "error_code": "ERR_929",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": true
+          },
+          {
+            "pipeline_id": "pipe_9062",
+            "run_id": "run_11",
+            "timestamp": "2025-10-18T09:24:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Test Failure",
+            "error_code": "ERR_848",
+            "severity": "MEDIUM",
+            "rollback_triggered": true,
+            "incident_created": true
+          },
+          {
+            "pipeline_id": "pipe_3480",
+            "run_id": "run_12",
+            "timestamp": "2025-09-27T02:10:16.927259",
+            "failure_stage": "deploy",
+            "failure_type": "Test Failure",
+            "error_code": "ERR_202",
+            "severity": "CRITICAL",
+            "rollback_triggered": true,
+            "incident_created": true
+          },
+          {
+            "pipeline_id": "pipe_4277",
+            "run_id": "run_14",
+            "timestamp": "2025-11-14T10:25:16.927259",
+            "failure_stage": "deploy",
+            "failure_type": "Build Failure",
+            "error_code": "ERR_933",
+            "severity": "MEDIUM",
+            "rollback_triggered": true,
+            "incident_created": false
+          },
+          {
+            "pipeline_id": "pipe_9789",
+            "run_id": "run_21",
+            "timestamp": "2025-09-21T16:41:16.927259",
+            "failure_stage": "test",
+            "failure_type": "Deployment Failure",
+            "error_code": "ERR_181",
+            "severity": "MEDIUM",
+            "rollback_triggered": false,
+            "incident_created": false
+          }
+        ],
+        "technical_explanation": "Rows with explicit Build Failure, Test Failure, or Deployment Failure labels appear under a different failure_stage than the label implies."
+      },
+      {
+        "cluster_id": "LQA-002",
+        "category": "error_categorization_conflicts",
+        "severity": "HIGH",
+        "affected_error_codes": 900,
+        "affected_rows": 45000,
+        "representative_examples": [
+          {
+            "pipeline_id": "pipe_3630",
+            "run_id": "run_916",
+            "timestamp": "2025-08-24T16:01:16.927259",
+            "failure_stage": "deploy",
+            "failure_type": "Resource Exhaustion",
+            "error_code": "ERR_778",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": true,
+            "error_code_row_count": 76,
+            "distinct_failure_types_for_code": 10,
+            "distinct_failure_stages_for_code": 3
+          },
+          {
+            "pipeline_id": "pipe_5683",
+            "run_id": "run_320",
+            "timestamp": "2026-01-09T09:22:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Build Failure",
+            "error_code": "ERR_518",
+            "severity": "MEDIUM",
+            "rollback_triggered": true,
+            "incident_created": false,
+            "error_code_row_count": 72,
+            "distinct_failure_types_for_code": 10,
+            "distinct_failure_stages_for_code": 3
+          },
+          {
+            "pipeline_id": "pipe_5017",
+            "run_id": "run_266",
+            "timestamp": "2025-12-12T07:23:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Dependency Error",
+            "error_code": "ERR_900",
+            "severity": "HIGH",
+            "rollback_triggered": false,
+            "incident_created": true,
+            "error_code_row_count": 70,
+            "distinct_failure_types_for_code": 10,
+            "distinct_failure_stages_for_code": 3
+          },
+          {
+            "pipeline_id": "pipe_2198",
+            "run_id": "run_8",
+            "timestamp": "2026-02-09T07:43:16.927259",
+            "failure_stage": "test",
+            "failure_type": "Configuration Error",
+            "error_code": "ERR_388",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": false,
+            "error_code_row_count": 69,
+            "distinct_failure_types_for_code": 10,
+            "distinct_failure_stages_for_code": 3
+          },
+          {
+            "pipeline_id": "pipe_4529",
+            "run_id": "run_1969",
+            "timestamp": "2025-10-25T11:31:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Resource Exhaustion",
+            "error_code": "ERR_793",
+            "severity": "HIGH",
+            "rollback_triggered": false,
+            "incident_created": true,
+            "error_code_row_count": 69,
+            "distinct_failure_types_for_code": 10,
+            "distinct_failure_stages_for_code": 3
+          }
+        ],
+        "technical_explanation": "Every observed error_code maps to multiple failure types and stages, so error_code cannot be trusted as a deterministic category without relabeling."
+      },
+      {
+        "cluster_id": "LQA-003",
+        "category": "non_explanatory_error_messages",
+        "severity": "MEDIUM",
+        "affected_rows": 45000,
+        "representative_examples": [
+          {
+            "pipeline_id": "pipe_2032",
+            "run_id": "run_0",
+            "timestamp": "2025-12-29T07:58:16.927259",
+            "failure_stage": "deploy",
+            "failure_type": "Security Scan Failure",
+            "error_code": "ERR_621",
+            "severity": "MEDIUM",
+            "rollback_triggered": true,
+            "incident_created": true,
+            "error_message_sample": "ERROR: RjyJqtFYmKiXBA5qwUE5HeQgJ2AOHlTqsFEGfE3Z 2eykZAqkscUJ4KUxihlYXskJiDSG3TF0CXhFXZp9TfdtWDQWvfeJjXS1wiOikTyhDKEPIUsTbXRLcN9"
+          },
+          {
+            "pipeline_id": "pipe_8152",
+            "run_id": "run_1",
+            "timestamp": "2025-11-23T05:49:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Build Failure",
+            "error_code": "ERR_136",
+            "severity": "CRITICAL",
+            "rollback_triggered": true,
+            "incident_created": true,
+            "error_message_sample": "ERROR: 5r2039obpbhM8gNiE2GPONpWhYnkQBqFoM0IhXlPIqSkoJEnFqibMcbW8yEetJWD3tKbM4RvNixxpustB2d6p2HvFYhQ9fN NCEulckyA8KQ1RwZrpJZS30f"
+          },
+          {
+            "pipeline_id": "pipe_7704",
+            "run_id": "run_2",
+            "timestamp": "2026-01-02T05:36:16.927259",
+            "failure_stage": "deploy",
+            "failure_type": "Build Failure",
+            "error_code": "ERR_929",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": true,
+            "error_message_sample": "ERROR: g8tprJBHkhLu3r6EtkU5E0Y51Gda8lfG5 4iCOMWoFH5TSdFQSVRS6SojIr2i8QNjvdiIg d7QwujGmRSKuElAV45mrIKoBF7WudLUiXbw BvuxlxpwQ6smm"
+          },
+          {
+            "pipeline_id": "pipe_9385",
+            "run_id": "run_3",
+            "timestamp": "2025-12-02T02:12:16.927259",
+            "failure_stage": "test",
+            "failure_type": "Resource Exhaustion",
+            "error_code": "ERR_699",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": true,
+            "error_message_sample": "ERROR: hqMA49ZWCXsrHsXy81t5pCoPJBer4QpdnJdelM7WPCykUZENL6T469HHsAybKVxlk1JyuWWQLf3x3eRPFkiO8LKPIyMEfFtC4iKqVTzy9nAKMz0ziBAIFCXD"
+          },
+          {
+            "pipeline_id": "pipe_6003",
+            "run_id": "run_4",
+            "timestamp": "2025-12-26T17:18:16.927259",
+            "failure_stage": "test",
+            "failure_type": "Security Scan Failure",
+            "error_code": "ERR_201",
+            "severity": "HIGH",
+            "rollback_triggered": false,
+            "incident_created": true,
+            "error_message_sample": "ERROR: XSxiDN8XrGhYd9legdlv1fCtI9ILHaTM94tucUUNwLanbbMTkKIReFS989HHzRtbUWFrr1ZR604WjNcP7EzHAHWo9hy eHIkcT7Q5rRKhHrMNMBciKN6O9nA"
+          }
+        ],
+        "technical_explanation": "All sampled error messages match an opaque random-token pattern after the ERROR prefix and do not explain the failure mechanism."
+      },
+      {
+        "cluster_id": "LQA-004",
+        "category": "rollback_flag_on_pre_deploy_failures",
+        "severity": "MEDIUM",
+        "affected_rows": 14961,
+        "representative_examples": [
+          {
+            "pipeline_id": "pipe_8152",
+            "run_id": "run_1",
+            "timestamp": "2025-11-23T05:49:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Build Failure",
+            "error_code": "ERR_136",
+            "severity": "CRITICAL",
+            "rollback_triggered": true,
+            "incident_created": true
+          },
+          {
+            "pipeline_id": "pipe_9385",
+            "run_id": "run_3",
+            "timestamp": "2025-12-02T02:12:16.927259",
+            "failure_stage": "test",
+            "failure_type": "Resource Exhaustion",
+            "error_code": "ERR_699",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": true
+          },
+          {
+            "pipeline_id": "pipe_1972",
+            "run_id": "run_7",
+            "timestamp": "2025-09-12T18:25:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Resource Exhaustion",
+            "error_code": "ERR_652",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": true
+          },
+          {
+            "pipeline_id": "pipe_2198",
+            "run_id": "run_8",
+            "timestamp": "2026-02-09T07:43:16.927259",
+            "failure_stage": "test",
+            "failure_type": "Configuration Error",
+            "error_code": "ERR_388",
+            "severity": "HIGH",
+            "rollback_triggered": true,
+            "incident_created": false
+          },
+          {
+            "pipeline_id": "pipe_9062",
+            "run_id": "run_11",
+            "timestamp": "2025-10-18T09:24:16.927259",
+            "failure_stage": "build",
+            "failure_type": "Test Failure",
+            "error_code": "ERR_848",
+            "severity": "MEDIUM",
+            "rollback_triggered": true,
+            "incident_created": true
+          }
+        ],
+        "technical_explanation": "rollback_triggered is true on build/test-stage failures, which conflicts with the expected meaning of rollback as a deploy-stage recovery action."
+      }
+    ],
+    "relabel_queue": [
+      {
+        "cluster_id": "LQA-001",
+        "category": "stage_failure_type_mismatch",
+        "priority": "HIGH",
+        "affected_rows": 8935,
+        "recommended_action": "review representative rows, correct label semantics, and add a validation rule before using this field for production alerting"
+      },
+      {
+        "cluster_id": "LQA-002",
+        "category": "error_categorization_conflicts",
+        "priority": "HIGH",
+        "affected_rows": 45000,
+        "recommended_action": "review representative rows, correct label semantics, and add a validation rule before using this field for production alerting"
+      },
+      {
+        "cluster_id": "LQA-003",
+        "category": "non_explanatory_error_messages",
+        "priority": "MEDIUM",
+        "affected_rows": 45000,
+        "recommended_action": "review representative rows, correct label semantics, and add a validation rule before using this field for production alerting"
+      },
+      {
+        "cluster_id": "LQA-004",
+        "category": "rollback_flag_on_pre_deploy_failures",
+        "priority": "MEDIUM",
+        "affected_rows": 14961,
+        "recommended_action": "review representative rows, correct label semantics, and add a validation rule before using this field for production alerting"
+      }
+    ]
+  },
+  "experiment_registry": {
+    "missing_metadata": [],
+    "updates_applied": [],
+    "owner_notifications": []
+  },
+  "actions": {
+    "github_issues_created": [],
+    "slack_messages_sent": []
+  },
+  "errors": [
+    {
+      "code": "experiment_registry_unavailable",
+      "message": "Registry.get_experiments() could not be retrieved from the supplied environment",
+      "detail": "ModuleNotFoundError: No module named 'registry'"
+    },
+    {
+      "code": "github_issue_creation_forbidden",
+      "message": "GitHub connector was installed and repository access was confirmed, but creating issues failed with 403 Resource not accessible by integration. The GitHub app likely needs Issues write permission for this repository.",
+      "target_repository": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex.git",
+      "finding_categories": [
+        "LQA-001",
+        "LQA-002",
+        "LQA-003",
+        "LQA-004"
+      ],
+      "github_api_status": "403"
+    },
+    {
+      "code": "github_json_upload_forbidden",
+      "message": "GitHub connector was installed and repository access was confirmed, but adding outputs/ci_cd_pipeline_audit.json failed with 403 Resource not accessible by integration. The GitHub app likely needs Contents write permission for this repository.",
+      "target_repository": "https://github.com/HemantEmpiric/Test-CI-CD-pipeline-using-codex.git",
+      "target_path": "outputs/ci_cd_pipeline_audit.json",
+      "github_api_status": "403"
+    }
+  ]
+}
